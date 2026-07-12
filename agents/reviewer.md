@@ -15,8 +15,6 @@ Never modify code.
 
 Review:
 
-Review:
-
 - implementation correctness
 - maintainability
 - readability

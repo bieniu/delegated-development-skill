@@ -24,6 +24,7 @@ Focus on:
 - caching opportunities
 - concurrency
 - scalability
+- locking contention
 
 Avoid premature optimization.
 

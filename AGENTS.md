@@ -1,39 +1,20 @@
 # Agent workflow rules
 
-## Delegation requirements
+For any non-trivial code change, load the **delegated-development** skill
+which defines the complete workflow with decision matrix, agent responsibilities,
+and verification gates.
 
-Before implementing any non-trivial change:
+## High-level roadmap
 
-1. Analyze whether the task benefits from independent review.
-2. Delegate investigation to a sub-agent when:
-   - the change affects multiple files,
-   - the architecture is unclear,
-   - the change introduces a new feature,
-   - the change modifies security-sensitive code,
-   - tests are missing.
+1. **Explore** – Quick reconnaissance of unfamiliar code areas (optional).
+2. **Analyze** – Delegate to the architect for architecture review.
+3. **Implement** – Follow conventions and the architect's strategy.
+4. **Review** – Run required specialized reviews (security, performance, tester, reviewer).
+5. **Resolve** – Fix findings, re-run tests, re-review.
+6. **Gate** – Final quality gate (gatekeeper). PASS required.
 
-## Implementation workflow
+## Mandatory rules
 
-For every significant code change:
+- Run linter and type checker before considering work complete.
+- Never skip tests. If tests are missing, add regression tests before behavioral changes.
 
-1. Ask an analysis sub-agent to inspect the repository and identify risks.
-2. Implement the change only after understanding the existing design.
-3. After implementation, always ask a review sub-agent to verify:
-   - correctness,
-   - edge cases,
-   - regression risks,
-   - performance implications,
-   - test coverage.
-
-## Verification policy
-
-Never consider a task complete after editing files.
-
-Completion requires:
-
-- running relevant tests,
-- reviewing changed files,
-- receiving feedback from a reviewer sub-agent,
-- fixing all valid findings.
-
-If reviewer feedback identifies issues, repeat the verification cycle.

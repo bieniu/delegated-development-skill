@@ -17,16 +17,11 @@ Focus on:
 - authorization
 - input validation
 - output encoding
-- injection vulnerabilities
-- command execution
-- SQL injection
-- path traversal
-- SSRF
-- XSS
-- CSRF
+- injection vulnerabilities (SQL, command, NoSQL)
 - secret management
 - cryptography misuse
 - insecure defaults
+- unsafe APIs
 - dependency risks
 - privilege escalation
 

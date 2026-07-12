@@ -29,6 +29,20 @@ Never modifies code.
 
 ---
 
+## explore
+
+Fast codebase exploration for quick reconnaissance.
+
+Use when:
+
+* the change affects an unfamiliar area of the codebase
+* you need to quickly find relevant files before deeper analysis
+* the change is small and may not warrant full architect analysis
+
+Has access to read and search tools only – never modifies code.
+
+---
+
 ## security
 
 Reviews the implementation from a security perspective.
@@ -39,11 +53,13 @@ Focus areas:
 * authorization
 * input validation
 * output encoding
-* secrets
-* dependency risks
-* unsafe APIs
-* injection vulnerabilities
+* injection vulnerabilities (SQL, command, NoSQL)
+* secret management
+* cryptography misuse
 * insecure defaults
+* unsafe APIs
+* dependency risks
+* privilege escalation
 
 ---
 
@@ -54,14 +70,17 @@ Reviews runtime efficiency and scalability.
 Focus areas:
 
 * algorithm complexity
-* memory usage
 * CPU usage
-* unnecessary allocations
+* memory allocations
+* unnecessary object creation
+* repeated computations
+* disk I/O
 * database efficiency
 * network efficiency
 * caching opportunities
 * concurrency
 * scalability
+* locking contention
 
 Avoid premature optimization.
 
@@ -144,6 +163,22 @@ If uncertain, perform the review.
 
 ---
 
+## Phase 1a – Optional Codebase Exploration
+
+If the change affects an unfamiliar area, delegate to **explore** for quick reconnaissance.
+
+explore can:
+
+* locate relevant files and modules
+* identify existing patterns and conventions
+* provide enough context to plan the next steps
+
+Skip this step if the codebase is already well understood.
+
+Proceed directly to Phase 2 (or to implementation for trivial changes).
+
+---
+
 ## Phase 2 – Architecture Analysis
 
 If required by the decision matrix:
@@ -185,14 +220,17 @@ Delegate to **security**.
 
 Review:
 
-* input validation
 * authentication
 * authorization
-* secret handling
-* dependency risks
-* unsafe APIs
-* injection vulnerabilities
+* input validation
+* output encoding
+* injection vulnerabilities (SQL, command, NoSQL)
+* secret management
+* cryptography misuse
 * insecure defaults
+* unsafe APIs
+* dependency risks
+* privilege escalation
 
 ---
 
@@ -202,14 +240,18 @@ Delegate to **performance**.
 
 Review:
 
-* complexity
-* allocations
-* unnecessary work
-* database access
-* network access
-* caching
-* scalability
+* algorithm complexity
+* CPU usage
+* memory allocations
+* unnecessary object creation
+* repeated computations
+* disk I/O
+* database efficiency
+* network efficiency
+* caching opportunities
 * concurrency
+* scalability
+* locking contention
 
 Only report issues with practical impact.
 
