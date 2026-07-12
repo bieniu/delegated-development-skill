@@ -1,6 +1,7 @@
 ---
 description: Independent testing specialist reviewing test quality and coverage.
 mode: subagent
+model: mimo-v2.5
 temperature: 0
 
 tools:

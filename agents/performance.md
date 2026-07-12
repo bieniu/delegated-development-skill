@@ -1,6 +1,7 @@
 ---
 description: Performance and scalability reviewer.
 mode: subagent
+model: deepseek-v4-flash
 temperature: 0
 
 tools:
