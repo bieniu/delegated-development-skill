@@ -1,7 +1,6 @@
 ---
 description: Security reviewer.
 mode: subagent
-model: mimo-v2.5
 temperature: 0
 
 tools:

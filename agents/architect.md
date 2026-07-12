@@ -1,7 +1,6 @@
 ---
 description: Analyze architecture before implementation.
 mode: subagent
-model: deepseek-v4-flash
 temperature: 0.1
 
 tools:

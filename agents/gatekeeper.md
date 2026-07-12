@@ -1,7 +1,6 @@
 ---
 description: Final quality gate.
 mode: subagent
-model: nemotron-3-ultra-free
 temperature: 0
 
 tools:
