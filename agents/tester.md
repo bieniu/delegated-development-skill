@@ -1,6 +1,7 @@
 ---
 description: Independent testing specialist reviewing test quality and coverage.
 mode: subagent
+model: opencode/mimo-v2.5-free
 temperature: 0
 
 tools:

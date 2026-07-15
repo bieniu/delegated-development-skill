@@ -1,6 +1,7 @@
 ---
 description: Analyze architecture before implementation.
 mode: subagent
+model: opencode/deepseek-v4-flash-free
 temperature: 0.1
 
 tools:

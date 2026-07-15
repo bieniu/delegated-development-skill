@@ -1,6 +1,7 @@
 ---
 description: Performance and scalability reviewer.
 mode: subagent
+model: opencode/north-mini-code-free
 temperature: 0
 
 tools:

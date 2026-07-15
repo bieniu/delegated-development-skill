@@ -1,6 +1,7 @@
 ---
 description: Final quality gate.
 mode: subagent
+model: opencode/hy3-free
 temperature: 0
 
 tools:

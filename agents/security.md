@@ -1,6 +1,7 @@
 ---
 description: Security reviewer.
 mode: subagent
+model: opencode/mimo-v2.5-free
 temperature: 0
 
 tools:
