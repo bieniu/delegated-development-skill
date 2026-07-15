@@ -31,7 +31,7 @@ Mention testing only if implementation obviously contradicts the available tests
 
 Verify that the implementation follows the strategy proposed by the architect.
 
-Report deviations only when they negatively affect the design.
+Report every deviation from the architect's strategy. The main agent needs to know about all deviations to evaluate trade-offs, even if you consider the deviation acceptable in isolation.
 
 Do not assume code is correct simply because it compiles.
 

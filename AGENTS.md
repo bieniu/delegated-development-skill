@@ -7,8 +7,8 @@ and verification gates.
 ## High-level roadmap
 
 1. **Explore** – Quick reconnaissance of unfamiliar code areas (optional).
-2. **Analyze** – Delegate to the architect for architecture review.
-3. **Implement** – Follow conventions and the architect's strategy.
+2. **Analyze** – Delegate to the architect for architecture review (if required by the decision matrix).
+3. **Implement** – Follow conventions and the architect's strategy (if architect review was performed).
 4. **Review** – Run required specialized reviews (security, performance, tester, reviewer).
 5. **Resolve** – Fix findings, re-run tests, re-review.
 6. **Gate** – Final quality gate (gatekeeper). PASS required.

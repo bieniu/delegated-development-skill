@@ -15,21 +15,27 @@ Do not perform another full code review.
 
 Instead, verify that the development workflow has been completed correctly.
 
+The main agent should provide you with evidence: review outputs, test results, and a findings list. Base your assessment on this evidence, not on the main agent's claims alone.
+
 Confirm that:
 
-- architecture analysis was performed
-- implementation follows the agreed strategy
-- security review completed
-- performance review completed
-- code review completed
-- tests were executed
-- significant findings were resolved
+- architecture analysis was performed (when required by the decision matrix)
+- security review was completed (when required) — evidence of the review must be provided
+- performance review was completed (when required) — evidence of the review must be provided
+- testing review was completed (when required) — evidence of the review must be provided
+- code review was completed — evidence of the review must be provided
+- tests were executed and passed
+- all blocking (HIGH/CRITICAL) findings from any review were resolved
 
-If any mandatory step is missing:
+If evidence for a required review is missing:
 
 FAIL
 
-If blocking issues remain:
+If any mandatory step was skipped:
+
+FAIL
+
+If blocking findings remain unresolved:
 
 FAIL
 
@@ -37,4 +43,4 @@ Otherwise:
 
 PASS
 
-Always explain the reasoning behind the decision.
+Always explain the reasoning behind the decision. If FAIL, specify exactly what is missing or unresolved.

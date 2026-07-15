@@ -145,6 +145,27 @@ with explanation.
 
 # Workflow
 
+## Context Passing Between Phases
+
+Every sub-agent must receive the context it needs. The main agent is responsible for collecting outputs from each phase and including them when delegating to the next sub-agent.
+
+Required context per delegation:
+
+| Delegation       | Context to include                                                                 |
+| ---------------- | ---------------------------------------------------------------------------------- |
+| explore          | Task description, relevant files (if known), specific questions to answer          |
+| architect        | Full task description, requirements, known constraints, links to relevant files    |
+| implementation   | Architect's architecture summary + strategy, any exploration findings              |
+| security         | Architect's strategy, diff of changes, relevant file paths                         |
+| performance      | Architect's strategy, diff of changes, relevant file paths                         |
+| tester           | Complete diff of changes, existing test structure, architect's strategy            |
+| reviewer         | Architect's strategy, diff of changes, any previous review findings                |
+| gatekeeper       | Outputs from all completed reviews, test results, list of resolved/unresolved findings |
+
+Without the proper context, sub-agents cannot perform their role correctly.
+
+---
+
 ## Phase 1 – Determine Required Reviews
 
 Determine which specialized reviews are required using the following decision matrix.
@@ -195,9 +216,13 @@ Review:
 * implementation risks
 * recommended approach
 
+Save the architect's full output. It must be passed to the implementation phase and to every specialized reviewer in Phase 4. Include the architect's strategy description when delegating to each reviewer.
+
 ---
 
 ## Phase 3 – Implementation
+
+Begin with the architect's recommended strategy. The architecture summary and risk analysis must drive design decisions.
 
 Implement the solution by following:
 
@@ -205,14 +230,25 @@ Implement the solution by following:
 * project architecture
 * existing design patterns
 * coding standards
+* the architect's recommended approach
 
 Avoid unnecessary refactoring.
+
+When implementation is complete, collect the full diff of changes to pass to reviewers in Phase 4.
 
 ---
 
 ## Phase 4 – Specialized Reviews
 
 Invoke each required reviewer independently.
+
+When delegating, include:
+
+* the original task description
+* the full diff of changes
+* the architect's strategy (if architect review was performed)
+* any relevant file paths
+* specific concerns you want the reviewer to examine
 
 ### Security Review
 
@@ -300,9 +336,11 @@ For every valid finding:
 1. Fix the implementation.
 2. Update or add tests if necessary.
 3. Re-run relevant tests.
-4. Ask the corresponding reviewer to verify the fix.
+4. Ask the corresponding reviewer to verify the fix — include the original finding, the applied fix, and the diff so the reviewer can confirm the resolution without re-reading the entire codebase.
 
 Repeat until all blocking findings are resolved.
+
+Maintain a list of findings and their status (open / resolved) to pass to the gatekeeper in Phase 7.
 
 ---
 
@@ -321,6 +359,13 @@ If existing code is modified and is not covered by tests, create regression test
 ## Phase 7 – Final Quality Gate
 
 Delegate to **gatekeeper**.
+
+When delegating, include all evidence:
+
+* the architect's output (if architect review was performed)
+* each reviewer's full output (security, performance, tester, reviewer)
+* the findings list with status (open / resolved)
+* test execution results
 
 The gatekeeper must verify that:
 

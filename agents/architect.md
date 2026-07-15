@@ -25,9 +25,24 @@ Focus on:
 
 Never implement code.
 
-Provide:
+Provide the following structured output:
 
-1. Architecture summary
-2. Risks
-3. Recommended implementation strategy
-4. Files likely to require modification
+## Architecture Summary
+
+[description of current architecture, relevant modules, design patterns]
+
+## Affected Modules
+
+[list of files/modules that will need changes]
+
+## Risks
+
+[HIGH/MEDIUM/LOW classified risks with explanation]
+
+## Recommended Implementation Strategy
+
+[step-by-step strategy that the implementation phase should follow. Be specific enough to guide design decisions.]
+
+## Dependencies and Constraints
+
+[any external dependencies, integration points, or constraints the implementer must respect]
