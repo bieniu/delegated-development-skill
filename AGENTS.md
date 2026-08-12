@@ -18,3 +18,17 @@ and verification gates.
 - Run linter and type checker before considering work complete.
 - Never skip tests. If tests are missing, add regression tests before behavioral changes.
 
+## MCP: context7
+
+When you need current documentation for a library, framework, SDK, API, CLI
+tool, or configuration syntax, use the `context7` MCP tools (`context7_*`)
+instead of relying on memory or web search — training data may be outdated.
+
+Typical use: API syntax, setup/configuration, version migration, library-specific debugging.
+
+Do not use for: general coding advice, code review, or business logic questions.
+
+Available to the main agent and to the `architect`, `performance`, and `tester`
+subagents. The `reviewer`, `security`, and `gatekeeper` subagents have it
+disabled.
+

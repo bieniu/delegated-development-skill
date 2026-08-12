@@ -1,12 +1,13 @@
 ---
 description: Final quality gate.
 mode: subagent
-model: opencode/hy3-free
+model: opencode/deepseek-v4-flash-free
 temperature: 0
 
 tools:
   edit: false
   write: false
+  'context7_*': false
 ---
 
 You are the final quality gate.

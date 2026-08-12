@@ -1,12 +1,13 @@
 ---
 description: Performance and scalability reviewer.
 mode: subagent
-model: opencode/north-mini-code-free
+model: opencode/mimo-v2.5-free
 temperature: 0
 
 tools:
   edit: false
   write: false
+  'context7_*': true
 ---
 
 You are a software performance specialist.
@@ -79,6 +80,7 @@ If you cannot measure or estimate the impact, note the pattern as LOW and explai
 Use these to inform your review:
 
 - **Explore agent** – Find how existing code handles similar performance concerns. Check for established caching, batching, or async patterns.
+- **Context7 (MCP)** – Fetch current documentation of libraries or APIs used in the change to verify intended usage, batching/caching options, and configuration that affects performance characteristics.
 - **Web search** – Research typical performance characteristics of libraries or APIs used in the change.
 
 If you're uncertain about something and can't verify it, say "I'm not sure about X" rather than flagging it as a definite issue.
