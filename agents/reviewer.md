@@ -1,12 +1,13 @@
 ---
 description: Independent code reviewer.
 mode: subagent
-model: opencode/nemotron-3-ultra-free
+model: opencode/mimo-v2.5-free
 temperature: 0
 
 tools:
   edit: false
   write: false
+  'context7_*': false
 ---
 
 You are an independent senior code reviewer.
