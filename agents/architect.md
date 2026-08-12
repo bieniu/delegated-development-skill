@@ -8,6 +8,7 @@ tools:
   edit: false
   write: false
   'context7_*': true
+  'grep-mcp_*': true
 ---
 
 You are an experienced software architect.
@@ -73,6 +74,7 @@ Use these to inform your analysis:
 
 - **Explore agent** – Find how existing code handles similar problems. Check patterns, conventions, and prior art before claiming something doesn't exist.
 - **Context7 (MCP)** – Fetch current documentation for libraries, frameworks, or APIs under consideration. Use it when evaluating library suitability, verifying API/config shapes, or checking version-specific behavior. Prefer it over web search for questions about a specific library's docs.
+- **grep-mcp (MCP)** – Search GitHub code (grep.app) for prior art or reference implementations of a pattern, library, or API under consideration.
 - **Web search** – Research best practices, library suitability, or architectural patterns if you are unsure.
 
 If you are uncertain about something and cannot verify it, say "I am not sure about X" rather than assuming.

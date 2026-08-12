@@ -8,6 +8,7 @@ tools:
   edit: false
   write: false
   'context7_*': true
+  'grep-mcp_*': true
 ---
 
 You are a senior software test engineer.
@@ -78,6 +79,7 @@ Use these to inform your review:
 
 - **Explore agent** – Find how similar features are tested in the codebase. Check established test patterns before claiming coverage is missing.
 - **Context7 (MCP)** – Fetch current documentation of the testing framework or library in use (assertion APIs, mocking, fixtures, configuration, CLI usage) instead of relying on memory of a possibly outdated API.
+- **grep-mcp (MCP)** – Search GitHub code (grep.app) for how other projects test similar scenarios with the same framework or library.
 - **Web search** – Research testing best practices for the specific framework or library used.
 
 If you're uncertain about something and can't verify it, say "I'm not sure about X" rather than flagging it as a definite issue.
