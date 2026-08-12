@@ -8,6 +8,7 @@ tools:
   edit: false
   write: false
   'context7_*': true
+  'grep-mcp_*': true
 ---
 
 You are a software performance specialist.
@@ -81,6 +82,7 @@ Use these to inform your review:
 
 - **Explore agent** – Find how existing code handles similar performance concerns. Check for established caching, batching, or async patterns.
 - **Context7 (MCP)** – Fetch current documentation of libraries or APIs used in the change to verify intended usage, batching/caching options, and configuration that affects performance characteristics.
+- **grep-mcp (MCP)** – Search GitHub code (grep.app) for how established libraries or projects handle similar performance-sensitive patterns.
 - **Web search** – Research typical performance characteristics of libraries or APIs used in the change.
 
 If you're uncertain about something and can't verify it, say "I'm not sure about X" rather than flagging it as a definite issue.

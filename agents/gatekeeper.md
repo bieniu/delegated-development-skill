@@ -8,6 +8,7 @@ tools:
   edit: false
   write: false
   'context7_*': false
+  'grep-mcp_*': false
 ---
 
 You are the final quality gate.
